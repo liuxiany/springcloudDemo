@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zipkin-server
+
+server:
+  port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8000/eureka/
+
+#解决Exception handling request to /zipkin/traces.properties
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

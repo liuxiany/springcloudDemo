@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka-consumer
+  zipkin:
+    base-url: http://localhost:8001
+  sleuth:
+    sampler:
+      #0.0至1.0之间 1.0表示100%采样既采全部
+      probability: 1.0
+
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8000/eureka/
+
+hystrix:
+  metrics:
+    enabled: true
+feign:
+  hystrix:
+    enabled: true

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: eureka-provider
+  rabbitmq:
+    host: 192.168.223.129
+    port: 5672
+    username: jnsl
+    password: jnsl123
+    virtual-host: /
+  cloud:
+    bus:
+      trace:
+        enabled: true
+      enabled: true
+  zipkin:
+    base-url: http://localhost:8001
+  sleuth:
+    sampler:
+      #0.0至1.0之间 1.0表示100%采样既采全部
+      probability: 1.0
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

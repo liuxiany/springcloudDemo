@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: springcloud-zuul
+  zipkin:
+    base-url: http://localhost:8001
+  sleuth:
+    sampler:
+      #0.0至1.0之间 1.0表示100%采样既采全部
+      probability: 1.0
+
+server:
+  port: 9002
+
+#Zuul的路由规则如下：http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务
+#zuul:
+  #routes:
+    #http://localhost:9002/helloworld/ddd
+    #会跳转到http://www.qq.com/
+    #baidu:
+      #path : /helloworld/**
+      #url : http://www.qq.com/
+      ##作用是使http://localhost:9002/helloworld/** 可以跳转到eureka-provider上
+      #serviceId对应的是spring.application.name的值
+      #serviceId: eureka-provider
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8000/eureka/
+
+##路由重试
+zuul:
+  retryable: true
