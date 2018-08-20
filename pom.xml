@@ -6,7 +6,15 @@
     <groupId>com.example</groupId>
     <artifactId>springcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>auth-server</module>
+        <module>eureka-consumer</module>
+        <module>eureka-provider</module>
+        <module>eureka-server</module>
+        <module>springcloud-zuul</module>
+        <module>zipkin-server</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>springcloud</name>
     <description>Demo project for Spring Cloud</description>

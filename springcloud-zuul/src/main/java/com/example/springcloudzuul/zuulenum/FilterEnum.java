@@ -7,24 +7,14 @@ package com.example.springcloudzuul.zuulenum;
 public enum FilterEnum {
 
     /**
-     *pre
+     * 认证服务uri
      */
-    PRE("pre"),
+    AUTH_URL("/auth-server/"),
 
     /**
-     * routing
+     * 获取token的地址
      */
-    ROUTING("routing"),
-
-    /**
-     * post
-     */
-    POST("post"),
-
-    /**
-     * error
-     */
-    ERROR("error");
+    GET_TOKEN("/auth-server/getToken?userId=");
 
 
     private FilterEnum(String value){

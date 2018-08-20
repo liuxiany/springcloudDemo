@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: auth-server
+  datasource:
+    #type: com.alibaba.druid.pool.DruidDataSource
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://127.0.0.1:3336/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    hikari :
+      minimum-idle : 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  redis:
+    host: 127.0.0.1
+    port: 6679
+    password:
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8000/eureka
+
+authSecret : liuxy
